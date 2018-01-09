@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF=8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stream 1 project enquriries form</title>
+  <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'/>
+  <link rel='stylesheet' type='text/css' href='css/style1.css'/>
+  <style type="text/css">
+  
+  body{
+    background-color: gray;
+  }
+
+  #map {
+   height: 400px;
+  width: 100%;
+       }
+  #enquiry{
+    height: 15%;
+    width:25%;
+  }
+  .address{
+    font-size: 20px;
+  }
+    
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Mini Tuning Madness</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li class="active"><a href="enquiries.html">Enquiries</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <h1>Enquiries</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-2 address">
+      <p>Mini Tuning Madness<br>
+      123 Fake Street<br>
+      Eyemouth<br>
+      Scotland<br>
+      fa ke2</p>
+      <p>Telephone: 0123 456789</p>
+      <p>Email: minituningmadness@hotmail.com</p>
+    </div>
+    <div class="col-xs-12 col-lg-4 address">
+      Please, if you have any enquiries regarding any of our services please do get in touch using the form.
+    </div>
+<div class="col-xs-12 col-lg-6">
+  <form>
+    <div class="form-group">
+      <label class="col-form-label" for="formGroup">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Please enter name">
+      <label class="col-form-label" for="formGroup">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Please enter Email">
+      <label class="col-form-label" for="formGroup">Telephone:</label>
+      <input type="number" class="form-control" id="phone" placeholder="Please enter phone number">
+      <label class="col-form-label" for="formGroup">Enquiry</label>
+      <textarea class="form-control" rows="5" id="query" placeholder="Please enter Enquiry"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg">Go!</button>
+  </form>
+                   
+</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-lg-12">
+    <div id="map">
+    <script>
+      function initMap() {
+        var Eyemouth = {lat: 55.869058, lng: -2.091068};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: Eyemouth
+        });
+        var marker = new google.maps.Marker({
+          position: Eyemouth ,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChxPWqJpnuwiN_J_49MG_oYmaYZhiM0II&callback=initMap">
+    </script>
+    </div>
+</div>
+</div>
+<div class="footer">copyright &copy; Mini Tuning Madness 2017</div>
+<script src='http://code.jquery.com/jquery.min.js'></script>
+<script src='bootstrap/js/bootstrap.min.js'></script>
+</body>
+</html>
