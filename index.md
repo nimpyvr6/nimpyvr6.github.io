@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/nimpyvr6/github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nimpyvr6/github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF=8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stream 1 project index page</title>
+  <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'/>
+  <link rel='stylesheet' type='text/css' href='css/style1.css'/>
+  <style>
+  body { 
+  background: url(images/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+ </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Mini Tuning Madness</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="enquiries.html">Enquiries</a></li>
+      <li><a href="appointment.html">Appointment</a></li>
+    </ul>
+</nav>
+<div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-xs-12 center-block text-center"><span class="align-middle"><h1>Mini Tuning Madness for all you mini R56 Tuning needs</h1></div>
+        <div class="row align-items-center">
+         <div class="col-xs-12 center-block text-center"><h2>Specialising in the tuning and modifying of Mini R56 cooper S and Works models</h2></div>
+       </div>
+  </div>
+<script src='http://code.jquery.com/jquery.min.js'></script>
+<script src='bootstrap/js/bootstrap.min.js'></script>
+</body>
+</html>
