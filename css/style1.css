@@ -1,0 +1,26 @@
+ h1{
+ 	color:white;
+ 	font-family: "arial";
+ 	font-size: 40px;
+ }
+ h2{
+ 	color:white;
+ 	font-family: "arial";
+ }
+#serviceimage{
+	height:300px;
+	width:auto;
+}
+.odd{
+	background-color: gray;
+}
+.footer{
+	position: fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	background-color: gray;
+	color: white;
+	text-align: center;
+}
+
