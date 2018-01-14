@@ -6,6 +6,100 @@
   <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'/>
   <link rel='stylesheet' type='text/css' href='css/style1.css'/>
 	<title>project 1 appointments</title>
+  <style type="text/css">
+  .serviceblurb{
+    font-size: 20px;
+  }
+  body{
+    background-color: gray;
+  }
+  .serviceblurb{
+    font-size: 20px;
+  }
+</style>
+  <script type="text/javascript">
+
+// these are labels for the days of the week
+cal_days_labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// these are human-readable month name labels, in order
+cal_months_labels = ['January', 'February', 'March', 'April',
+                     'May', 'June', 'July', 'August', 'September',
+                     'October', 'November', 'December'];
+
+// these are the days of the week for each month, in order
+cal_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+// this is the current date
+cal_current_date = new Date(); 
+
+function Calendar(month, year) {
+  this.month = (isNaN(month) || month == null) ? cal_current_date.getMonth() : month;
+  this.year  = (isNaN(year) || year == null) ? cal_current_date.getFullYear() : year;
+  this.html = '';
+}
+
+Calendar.prototype.generateHTML = function(){
+
+  // get first day of month
+  var firstDay = new Date(this.year, this.month, 1);
+  var startingDay = firstDay.getDay();
+  
+  // find number of days in month
+  var monthLength = cal_days_in_month[this.month];
+  
+  // compensate for leap year
+  if (this.month == 1) { // February only!
+    if((this.year % 4 == 0 && this.year % 100 != 0) || this.year % 400 == 0){
+      monthLength = 29;
+    }
+  }
+  
+  // do the header
+  var monthName = cal_months_labels[this.month]
+  var html = '<table class="calendar-table">';
+  html += '<tr><th colspan="7">';
+  html +=  monthName + "&nbsp;" + this.year;
+  html += '</th></tr>';
+  html += '<tr class="calendar-header">';
+  for(var i = 0; i <= 6; i++ ){
+    html += '<td class="calendar-header-day">';
+    html += cal_days_labels[i];
+    html += '</td>';
+  }
+  html += '</tr><tr>';
+
+  // fill in the days
+  var day = 1;
+  // this loop is for is weeks (rows)
+  for (var i = 0; i < 9; i++) {
+    // this loop is for weekdays (cells)
+    for (var j = 0; j <= 6; j++) { 
+      html += '<td class="calendar-day">';
+      if (day <= monthLength && (i > 0 || j >= startingDay)) {
+        html += day;
+        day++;
+      }
+      html += '</td>';
+    }
+    // stop making rows if we've run out of days
+    if (day > monthLength) {
+      break;
+    } else {
+      html += '</tr><tr>';
+    }
+  }
+  html += '</tr></table>';
+
+  this.html = html;
+}
+
+Calendar.prototype.getHTML = function() {
+  return this.html;
+}
+
+</script>
+
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -18,87 +112,30 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About us</a></li>
       <li><a href="enquiries.html">Enquiries</a></li>
-      <li class="active"><a href="appointment.html">Appointment</a></li>
+      <li class="active"><a href="booking.html">Booking</a></li>
     </ul>
   </div>
 </nav>
-<div class="row">
-  <div class="col-xs-6 col-lg-6">
-    <h1>Bookings</h1>
-    <p>Hi! Please use the calendar to book an appointment with us, please note that we only do re maps on a Tuesday, Wednesday and a Saturday.
-      All other services are 6 days a week, Monday-Saturday</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-lg-6">
+      <h1>Bookings</h1>
+    </div>
   </div>
-  <div class="col-xs-6 col-lg-6">
-    <iframe src="https://calendar.google.com/calendar/b/1/embed?title=Mini%20Tuning%20Madness%20Bookings&amp;height=400&amp;wkst=1&amp;bgcolor=%23c0c0c0&amp;src=en.uk%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;ctz=Europe%2FLondon" style="border:solid 1px #777" width="600" height="400" frameborder="0" scrolling="no"></iframe>
-</div>
+  <div class="row">
+        <div class="col-xs-6 col-lg-6 serviceblurb">    
+        <p>Hi! Please use the calendar to book an appointment with us, please note that we are closed on a Sunday and only accept 4 appointment per day.
+          Thanks for your custom!</p>
+        </div>
+        <div class="col-xs-6 col-lg-6">
+        <script type="text/javascript">
+        var cal = new Calendar();
+        cal.generateHTML();
+        document.write(cal.getHTML());
+      </script>
+      </div>
   </div>
-  <script type="text/javascript">// Google api console clientID and apiKey 
-
- var clientId = '138855202486-r25a299nr6sc19eocuocdhl0ci3kt94k.apps.googleusercontent.com';
+</div>   
  
-
- // enter the scope of current project (this API must be turned on in the Google console)
-   var scopes = 'https://www.googleapis.com/auth/calendar';
-
-
-// OAuth2 functions
-     function handleClientLoad() {
-           gapi.client.setApiKey(apiKey);
-           window.setTimeout(checkAuth, 1);
-        }
-
-//To authenticate
-  function checkAuth() {
-    gapi.auth.authorize({ client_id: clientId, scope: scopes, immediate: true }, handleAuthResult);
-        }
-
-// This is the resource we will pass while calling api function
-var resource = {
-            "summary": "My Event",
-            "start": {
-                "dateTime": today
-            },
-            "end": {
-                "dateTime": twoHoursLater
-            },
-            "description":"We are organizing events",
-            "location":"US",
-            "attendees":[
-            {
-                    "email":"attendee1@gmail.com",
-                    "displayName":"Jhon",
-                    "organizer":true,
-                    "self":false,
-                    "resource":false,
-                    "optional":false,
-                    "responseStatus":"needsAction",
-                    "comment":"This is my demo event",
-                    "additionalGuests":3
-                    
-            },
-            {    
-                "email":"attendee2@gmail.com",
-                    "displayName":"Marry",
-                    "organizer":true,
-                    "self":false,
-                    "resource":false,
-                    "optional":false,
-                    "responseStatus":"needsAction",
-                    "comment":"This is an official event",
-                    "additionalGuests":3
-            }
-            ],
-        };
-
-function makeApiCall(){
-gapi.client.load('calendar', 'v3', function () { // load the calendar api (version 3)
-                var request = gapi.client.calendar.events.insert
-                ({
-                    'calendarId': '24tn4fht2tr6m86efdiqqlsedk@group.calendar.google.com', 
-// calendar ID which id of Google Calendar where you are creating events. this can be copied from your Google Calendar user view.
-
-                    "resource": resource  // above resource will be passed here
-                });                
-}</script>
 </body>
 </html>
