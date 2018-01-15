@@ -1,23 +1,4 @@
-<html>
-<head>
-	<meta charset="UTF=8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stream 1 project services page</title>
-  <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'/>
-  <link rel='stylesheet' type='text/css' href='css/style1.css'/>
-	<title>project 1 appointments</title>
-  <style type="text/css">
-  .serviceblurb{
-    font-size: 20px;
-  }
-  body{
-    background-color: gray;
-  }
-  .serviceblurb{
-    font-size: 20px;
-  }
-</style>
-  <script type="text/javascript">
+<script type="text/javascript">
 
 // these are labels for the days of the week
 cal_days_labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -99,46 +80,3 @@ Calendar.prototype.getHTML = function() {
 }
 
 </script>
-
-</head>
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.html">Mini Tuning Madness</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About us</a></li>
-      <li><a href="enquiries.html">Enquiries</a></li>
-      <li class="active"><a href="booking.html">Booking</a></li>
-    </ul>
-  </div>
-</nav>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-6 col-lg-6">
-      <h1>Bookings</h1>
-    </div>
-  </div>
-  <div class="row">
-        <div class="col-xs-6 col-lg-6 serviceblurb">    
-        <p>Hi! Please use the calendar to book an appointment with us, please note that we are closed on a Sunday and only accept 4 appointment per day.
-          Thanks for your custom!</p>
-        </div>
-        <div class="col-xs-6 col-lg-6">
-        <script type="text/javascript">
-        var cal = new Calendar();
-        cal.generateHTML();
-        document.write(cal.getHTML());
-      </script>
-      </div>
-  </div>
-  <div class="footer col-xs-12 col-lg-12">copyright &copy; Mini Tuning Madness 2017
-     </div>
-</div>  
-<script src='http://code.jquery.com/jquery.min.js'></script>
-<script src='bootstrap/js/bootstrap.min.js'></script> 
-</body>
-</html>
