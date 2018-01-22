@@ -7,9 +7,7 @@
   <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'/>
   <link rel='stylesheet' type='text/css' href='css/style1.css'/>
    <style type="text/css">
-  .serviceblurb{
-    font-size: 20px;
-  }
+  
   .redtext{
     color: red;
   }
@@ -17,7 +15,10 @@
     color: yellow;
   }
   body{
-    background-color: gray;
+    background-color:#01A7C2;
+  }
+  .active a{
+    color:#006989;
   }
 </style>
 </head>
@@ -25,8 +26,14 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
       <a class="navbar-brand" href="index.html">Mini Tuning Madness</a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="index.html">Home</a></li>
       <li class="active"><a href="services.html">Services</a></li>
@@ -43,7 +50,7 @@
 </div>
 
       <div class="row">
-        <div class="col-xs-12 col-lg-5 serviceblurb">Here at Mini tuning Madness we ofer a wide range of services for your Gen 2 Mini Cooper S or Cooper Works, these include, but are not imited to:
+        <div class="col-xs-12 col-lg-5">Here at Mini tuning Madness we ofer a wide range of services for your Gen 2 Mini Cooper S or Cooper Works, these include, but are not imited to:
           <p>
           <ul>
             <li>Remapping</li>
@@ -58,7 +65,7 @@
           </p>
         </div>
         <div class="col-xs-0 col-lg-3">
-          <p class="serviceblurb">Our servicing will not effect any manufacturer vehicle warranty. 
+          <p>Our servicing will not effect any manufacturer vehicle warranty. 
                                   All of our servicing is priced specifically to the vehicle, please provide the full registration and mileage for all quotes. </p>
           <p class="redtext">WE ARE FULLY EQUIPPED WITH THE MAIN DEALER SOFTWARE AND HAVE ACCESS TO RECORD THE DIGITAL SERVICE RECORDS IF REQUIRED AT AN ADDITIONAL COST OF £15</p>
               </div>
