@@ -63,9 +63,7 @@
           </div>
           <button type="submit" class="btn btn-success btn-lg">Go!</button>
         </form>
-        <div id="messages">
-              messages go here
-        </div>
+        
       </div>
   </div>
   
@@ -109,11 +107,11 @@ $( document ).ready(function() {
 
       if (jQuery.inArray(inputtedDate, takenDates) == -1) {
   
-        $('#messages').html('this day is free');
-        event.preventDefault();
+         alert('booking accepted, thank you!');
+        
     
       } else {
-        $('#messages').html('this day has been booked');
+        alert('We are sorry, but this day is booked up, please select another date');
         event.preventDefault();
       }
 
