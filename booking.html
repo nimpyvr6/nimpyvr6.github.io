@@ -1,16 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF=8">
+  <meta charset="UTF=8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stream 1 project services page</title>
   <link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.min.css'/>
   <link rel='stylesheet' type='text/css' href='css/style1.css'/>
-	<title>project 1 appointments</title>
+  <title>project 1 appointments</title>
   <style type="text/css">
   body{
     background-color:#01A7C2;
   }
 </style>
+
   </head>
 <body>
 <nav class="navbar navbar-default">
@@ -46,6 +48,7 @@
           </p>
         </div>
         <div class="col-xs-6 col-lg-6">
+          <form id="myform">
           <div class="form-group">
               <label class="col-form-label" for="formGroup">Name:</label>
               <input type="text" class="form-control" id="name" placeholder="Please enter name" required>
@@ -58,6 +61,11 @@
               <label class="col-form-label" for="formGroup">Service being booked, remap, repair etc</label>
               <textarea class="form-control" rows="5" id="query" placeholder="Please enter service being booked" required></textarea>
           </div>
+          <button type="submit" class="btn btn-success btn-lg">Go!</button>
+        </form>
+        <div id="messages">
+              messages go here
+        </div>
       </div>
   </div>
   
@@ -66,5 +74,52 @@
 </div>  
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='bootstrap/js/bootstrap.min.js'></script> 
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+    console.log($('#date').val());
+
+    $( "#myform" ).submit(function( event ) {
+
+    console.log($('#date').val());
+      
+     
+      var inputtedDate = $('#date').val();
+      console.log(inputtedDate);
+ 
+      var takenDates = [
+      '2018-01-01',
+      '2018-01-14',
+      '2018-01-21',
+      '2018-01-28',
+      '2018-01-30',
+      '2018-02-04',
+      '2018-02-11',
+      '2018-02-15',
+      '2018-02-18',
+      '2018-02-25',
+      '2018-02-22',
+      '2018-02-23',
+      '2018-02-24',
+      '2018-02-26',
+      '2018-03-01',
+      ];
+      
+      console.log(jQuery.inArray(inputtedDate, takenDates));
+
+      if (jQuery.inArray(inputtedDate, takenDates) == -1) {
+  
+        $('#messages').html('this day is free');
+        event.preventDefault();
+    
+      } else {
+        $('#messages').html('this day has been booked');
+        event.preventDefault();
+      }
+
+  });
+
+});
+</script>
 </body>
 </html>
